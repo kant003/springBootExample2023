@@ -1,0 +1,4 @@
+patatas 10
+fresas 1
+limones 3
+pan 3
