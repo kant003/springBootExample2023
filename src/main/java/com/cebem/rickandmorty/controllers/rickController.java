@@ -211,14 +211,22 @@ rojo, blanco y amarillo]
    @GetMapping("/rickandmorty/all")
    public String characters(){
     CharactersModel charactersModel = rickAndMortyService2.getAllCharacters();
-    String html = "";
+    String html = "<html>";
+    html+="<head>";
+    html+="</head>";
+    html +="<body>";
     for(CharacterModel characterModel : charactersModel.results){
       html += characterModel.name;
       html += "<br/>";
       html += "<img width='100px' src='"+characterModel.image+"'>";
       html += "<hr/>";
     }
+    html+="</body>";
+    html+="</html>";
     return html;
    }
+
+   
+
 
 }
