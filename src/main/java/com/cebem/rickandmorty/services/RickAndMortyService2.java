@@ -13,21 +13,27 @@ public class RickAndMortyService2 {
     @Autowired
     RestTemplate restTemplate;
 
+    final static String BASE_API = "https://rickandmortyapi.com/api";
 
     public CharacterModel getCharacterRandom(){
         final int TOTAL_CHARACTERS  = 826;
         int random = Utils.getRandomValue(TOTAL_CHARACTERS-1)+1;  // 1..826
-        String url = "https://rickandmortyapi.com/api/character/"+random;
+        String url = "/character/"+random;
         //RestTemplate restTemplate = new RestTemplate();
-        CharacterModel datos = restTemplate.getForObject(url, CharacterModel.class );
+        CharacterModel datos = restTemplate.getForObject(BASE_API+url, CharacterModel.class );
         return datos;
     }
 
     public CharactersModel getAllCharacters(){
-        String url = "https://rickandmortyapi.com/api/character/";
-        CharactersModel datos = restTemplate.getForObject(url, CharactersModel.class );
+        String url = "/character/";
+        CharactersModel datos = restTemplate.getForObject(BASE_API+url, CharactersModel.class );
         return datos;
     }
 
+    public int getCharactersCount(){
+        String url = "/character/";
+        CharactersModel datos = restTemplate.getForObject(BASE_API+url, CharactersModel.class );
+        return datos.info.count;
+    }
 
 }
