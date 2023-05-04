@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Creación de un nuevo meme</h1>
+    <form class="form" action="/memes" method="post">
+        <label for="description">Descripción</label>
+        <input id="description" name="description" placeholder="Descripción">
+
+        <label for="url">Url</label>
+        <input id="url" name="url" placeholder="Url de la foto">
+
+        <label for="category">Categoria</label>
+        <select id="category" name="category">
+            <option value="informatica">Informática</option>
+            <option value="politica">Política</option>
+            <option value="humor_negro">Humor Negro</option>
+            <option value="otro">Otra</option>
+        </select>
+
+        <label for="author">Autor</label>
+        <input id="author" name="author" placeholder="Nombre del creador">
+
+        <button>Crear</button>
+    </form>
+</body>
+</html>

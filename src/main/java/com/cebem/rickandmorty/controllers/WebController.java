@@ -33,4 +33,6 @@ public class WebController {
     modelo.addAttribute("count", count);
     return "rickandmortyCount";
   }
+
+  
 }
