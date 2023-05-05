@@ -6,13 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        img{
-            width:100px;
-            border-radius: 10px;
-        }
-        li{
-            list-style: none;
-        }
+       
         nav{
             display: flex;
             flex-direction: row;
@@ -25,11 +19,7 @@
         nav a:hover{
             color:aquamarine;
         }
-        .container{
-            display: flex;
-            flex-wrap: wrap;
-            gap:10px;
-        }
+       
     </style>
 </head>
 <body>
@@ -37,13 +27,6 @@
         <a href="/memes">Listado de memes</a>
         <a href="/memes/addForm">Añadir nuevo meme</a>
     </nav>
-
-    <h1>Lista de memes</h1>
-    <section class="container">
-            <div th:each="meme: ${misMemes}">
-                <img th:src="${meme.url}" alt="meme"/>
-                <p th:text="${meme.description}"></p>
-            </div>
-    </section>
+    <h1>Meme creado correctamente</h1>
 </body>
 </html>
