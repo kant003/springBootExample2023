@@ -21,5 +21,14 @@ public class MemeService {
         return memeRepository.save(meme);
     }
 
+    public boolean deleteMeme(long id){
+        try{
+            memeRepository.deleteById(id);
+            return true;
+        }catch(IllegalArgumentException ex){
+            return false;
+        }
+    }
+
     // ...
 }

@@ -11,7 +11,8 @@ import jakarta.persistence.Table;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
 
-
+@Entity
+@Table(name="meme")
 public class MemeModel {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
