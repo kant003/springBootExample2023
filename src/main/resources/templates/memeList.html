@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <meta http-equiv="refresh" content="1"> -->
     <title>Document</title>
     <style>
         img{
@@ -43,15 +44,19 @@
             <div th:each="meme: ${misMemes}">
                 <img th:src="${meme.url}" alt="meme"/>
                 <p th:text="${meme.description}"></p>
-                <button onclick="deleteMeme()">❌</button>
+                <!-- https://www.baeldung.com/thymeleaf-js-function-call -->
+                <button th:onclick="deleteMeme(  [[${meme.id}]]  )">❌</button>
             </div>
     </section>
-    <script>
-        function deleteMeme(){
-            fetch("/memes/XXXX", {
-                method: "DELETE"
-            })
+   <script>
+    
+        async function deleteMeme(id){
+            //console.log('Quieres borarr el meme con id=',id)
+            await fetch('/memes/'+id, {method: 'DELETE'})
+            
+            console.log('Meme borrado')
+            window.location.replace('/memes')
         }
-    </script>
+   </script>
 </body>
 </html>
