@@ -1,43 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <meta http-equiv="refresh" content="1"> -->
-    <title>Document</title>
-    <style>
-        img{
-            width:100px;
-            border-radius: 10px;
-        }
-        li{
-            list-style: none;
-        }
-        nav{
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-        }
-        nav a{
-            text-decoration: none;
-            color: black;
-        }
-        nav a:hover{
-            color:aquamarine;
-        }
-        .container{
-            display: flex;
-            flex-wrap: wrap;
-            gap:10px;
-        }
-    </style>
-</head>
+<head th:replace="~{head(titulo='Listando')}"></head>
 <body>
-    <nav>
-        <a href="/memes">Listado de memes</a>
-        <a href="/memes/addForm">Añadir nuevo meme</a>
-    </nav>
+
+    <header th:insert="~{navegacion}"></header>
 
     <h1>Lista de memes</h1>
     <section class="container">
@@ -49,11 +15,11 @@
             </div>
     </section>
    <script>
-    
+
         async function deleteMeme(id){
             //console.log('Quieres borarr el meme con id=',id)
             await fetch('/memes/'+id, {method: 'DELETE'})
-            
+
             console.log('Meme borrado')
             window.location.replace('/memes')
         }

@@ -1,30 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        .form{
-            display:flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-        nav a{
-            text-decoration: none;
-            color: black;
-        }
-        nav a:hover{
-            color:aquamarine;
-        }
-    </style>
-</head>
+<head th:replace="~{head(titulo='Añadiendo')}"></head>
+
 <body>
-    <nav>
-        <a href="/memes">Listado de memes</a>
-        <a href="/memes/addForm">Añadir nuevo meme</a>
-    </nav>
+    <header th:insert="~{navegacion}"></header>
     <h1>Creación de un nuevo meme</h1>
     <form class="form" action="/memes" method="post">
         <label for="description">Descripción</label>

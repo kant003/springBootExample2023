@@ -1,32 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-       
-        nav{
-            display: flex;
-            flex-direction: row;
-            gap: 20px;
-        }
-        nav a{
-            text-decoration: none;
-            color: black;
-        }
-        nav a:hover{
-            color:aquamarine;
-        }
-       
-    </style>
-</head>
+<head th:replace="~{head(titulo='correcto')}"></head>
 <body>
-    <nav>
-        <a href="/memes">Listado de memes</a>
-        <a href="/memes/addForm">Añadir nuevo meme</a>
-    </nav>
+    <header th:insert="~{navegacion}"></header>
     <h1>Meme creado correctamente</h1>
 </body>
 </html>
