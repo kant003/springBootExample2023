@@ -14,6 +14,7 @@ public class MemeService {
     MemeRepository memeRepository;
 
     public ArrayList<MemeModel> getAllMemes(){
+        
         return (ArrayList<MemeModel>)memeRepository.findAll();
      }
 
