@@ -29,6 +29,7 @@ public class CommentModel {
     @ManyToOne
     @JoinColumn(name="videogame_id")
     private VideoGameModel videogame;
+    
 
     public long getId() {
         return id;

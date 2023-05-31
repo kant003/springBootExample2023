@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Datos del videojuego</h1>
+    <div>ID:</div>
+    <div th:text="${game.id}"></div>
+    <div>Nombre:</div>
+    <div th:text="${game.name}"></div>
+    <div>Rate:</div>
+    <div th:text="${game.rate}"></div>
+
+    <h2>Comentarios:</h2>
+    <div th:each="comment: ${comments}">
+        <p th:text="${comment.text}"></p>
+    </div>
+</div>
+</body>
+</html>

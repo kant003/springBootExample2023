@@ -1,6 +1,7 @@
 package com.cebem.rickandmorty.services;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,12 @@ public class VideoGameService {
 
     public ArrayList<VideoGameModel> getAll(){
         return (ArrayList<VideoGameModel>) videoGameRepository.findAll();
+    }
+    public VideoGameModel getById(long id){
+        if(videoGameRepository.findById(id).isPresent())
+            return videoGameRepository.findById(id).get();
+        else
+            return null;
     }
     public VideoGameModel create(VideoGameModel videoGame){
         return videoGameRepository.save(videoGame);

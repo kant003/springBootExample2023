@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Lista de todos los videojuegos</h1>
+    <div th:each="game: ${games}">
+                <p th:text="${game.name}"></p>
+                <p th:text="${game.description}"></p>
+                <p th:text="${game.rate}"></p>
+                <!-- https://www.baeldung.com/thymeleaf-js-function-call -->
+                <button th:onclick="deleteGame(  [[${game.id}]]  )">❌</button>
+    </div>
+
+    <script>
+
+        async function deleteGame(id){
+            //console.log('Quieres borarr el meme con id=',id)
+            await fetch('/videogames/'+id, {method: 'DELETE'})
+
+            console.log('Juego borrado')
+            window.location.replace('/games')
+        }
+   </script>
+</body>
+</html>

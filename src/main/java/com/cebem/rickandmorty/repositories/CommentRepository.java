@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import com.cebem.rickandmorty.models.CommentModel;
 
 @Repository
-public interface CommentRepository extends JpaRepository<CommentRepository, Long> {
+public interface CommentRepository extends JpaRepository<CommentModel, Long> {
     // listar todos los comentario de un videojuego en particular, ordenador por createdAt
     ArrayList<CommentModel> findByVideogameIdOrderByCreatedAtDesc(Long videogameId);
 }
